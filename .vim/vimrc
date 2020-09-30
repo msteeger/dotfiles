@@ -1,0 +1,59 @@
+"Vim rc
+
+"Plug 
+call plug#begin('~/.vim/plugged')
+
+Plug 'preservim/nerdtree'
+Plug 'joshdick/onedark.vim'
+Plug 'itchyny/lightline.vim'
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'mattn/emmet-vim'
+
+call plug#end()
+
+"Lightline
+let g:onedark_hide_endofbuffer = 1
+let g:lightline = { 'colorscheme': 'one' }
+
+set laststatus=2
+set noshowmode
+"theme
+colorscheme onedark
+
+"NERDTree settings
+"automatically start NERDTree on just `$ vim` 
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"use NERDTree over default explorer
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+"open NERDTree with CTRL+N
+map <C-n> :NERDTreeToggle<CR>
+"automatically close NERDTree when it is the last window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+
+"vim settings
+filetype plugin indent on
+syntax on
+			
+set tabstop=4 shiftwidth=4 expandtab 
+
+set hidden
+set backspace=start,eol,indent
+set nu
+set incsearch
+set noswapfile
+
+set path=.,**
+
+let RTP=split(&runtimepath,',')[0]
+let RC="~/.vim/vimrc"
+
+" Disable arrow movement, resize splits instead.
+nnoremap <Up>    :resize +2<CR>
+nnoremap <Down>  :resize -2<CR>
+nnoremap <Left>  :vertical resize +2<CR>
+nnoremap <Right> :vertical resize -2<CR>
+
+
