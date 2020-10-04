@@ -1,1 +1,1 @@
-bind P !git push origin
+bind status P !git push origin
