@@ -44,6 +44,8 @@ set backspace=start,eol,indent
 set nu
 set incsearch
 set noswapfile
+set spell
+set spelllang=en_us,de_de
 
 set path=.,**
 
