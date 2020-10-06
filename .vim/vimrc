@@ -17,6 +17,7 @@ let g:lightline = { 'colorscheme': 'one' }
 
 set laststatus=2
 set noshowmode
+
 "theme
 colorscheme onedark
 
@@ -41,11 +42,12 @@ set tabstop=4 shiftwidth=4 expandtab
 
 set hidden
 set backspace=start,eol,indent
-set nu
+set nu rnu
 set incsearch
 set noswapfile
 set spell
 set spelllang=en_us,de_de
+set cursorline
 
 set path=.,**
 
@@ -58,4 +60,12 @@ nnoremap <Down>  :resize -2<CR>
 nnoremap <Left>  :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
 
+" Navigate split buffers
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
+" Shift lines in visual mode
+xnoremap K :move '<-2<CR>gv-gv
+xnoremap J :move '>+1<CR>gv-gv
