@@ -8,6 +8,8 @@ Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-surround'
+Plug 'vim-scripts/AutoClose'
 
 call plug#end()
 
