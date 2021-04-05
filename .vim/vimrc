@@ -1,4 +1,10 @@
 "Vim rc
+"Set Leader Key to Space
+map <space> <leader>
+map <leader>A ggVG
+
+nmap <c-s> :w<CR>
+imap <c-s> <Esc>:w<CR>
 
 "Plug 
 call plug#begin('~/.vim/plugged')
@@ -9,15 +15,24 @@ Plug 'itchyny/lightline.vim'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/AutoClose'
+Plug 'posva/vim-vue'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
+
+Plug 'christoomey/vim-system-copy'
 
 call plug#end()
 
 source ~/.vim/settings/coc.vim
 source ~/.vim/settings/nerdtree.vim
 source ~/.vim/settings/lightline.vim
+
+"FZF bindings
+map <C-f> :Files! <CR>
 
 "theme
 colorscheme onedark
@@ -30,6 +45,7 @@ set hidden
 set backspace=start,eol,indent
 set nu rnu
 set incsearch
+set nowrap
 set noswapfile
 set spell
 set spelllang=en_us,de_de

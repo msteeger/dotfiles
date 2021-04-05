@@ -95,6 +95,7 @@ source $ZSH/oh-my-zsh.sh
 alias t="tig status"
 alias zshconfig="vim ~/.zshrc"
 
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -f -g ""'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm

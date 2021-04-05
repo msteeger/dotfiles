@@ -2,6 +2,9 @@
 #Install ZSH
 sudo apt-get install zsh
 
+# Install ag search
+sudo apt-get install silversearcher-ag
+
 #Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 

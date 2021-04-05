@@ -10,4 +10,4 @@ map <C-n> :NERDTreeToggle<CR>
 "automatically close NERDTree when it is the last window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-
+let NERDTreeShowHidden=1
